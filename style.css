@@ -1,65 +1,67 @@
 body {
-    font-family: "Traditional Arabic", Arial, sans-serif;
+    font-family: "Traditional Arabic", sans-serif;
+    text-align: center;
     background: url('https://i.ibb.co/b5j9nSVD/image.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
-    text-align: center;
-    direction: rtl;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-    max-width: 90%;
+    width: 90%;
+    max-width: 700px;
     margin: auto;
     padding: 20px;
     background: rgba(0, 0, 0, 0.6);
     border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.6);
 }
 
-/* عنوان التقويم */
-h1 {
-    font-size: 36px;
-    font-weight: bold;
-    color: #FFD700; /* لون ذهبي */
-    margin-bottom: 20px;
-}
-
-/* شبكة التقويم */
-.calendar {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 أعمدة */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
-    text-align: center;
-    justify-content: center;
-    margin-top: 20px;
-    padding: 10px;
 }
 
-/* تنسيق كل يوم */
-.day {
+h1 {
+    color: #FFD700;
+    font-size: 28px;
+}
+
+.tasbeeh-link {
+    font-size: 18px;
+    text-decoration: none;
+    color: #FFD700;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.tasks, .stats {
     background: rgba(255, 255, 255, 0.2);
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
     padding: 15px;
     border-radius: 10px;
-    transition: 0.3s;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+button {
+    background: #FFD700;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
     cursor: pointer;
-}
-
-/* تغيير لون اليوم عند تمرير الماوس */
-.day:hover {
-    background: rgba(255, 223, 0, 0.8); /* لون ذهبي */
-    color: black;
-}
-
-/* لون الروابط */
-.day a {
-    text-decoration: none;
-    color: #FFD700; /* لون ذهبي */
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.day a:hover {
-    color: black;
+    border-radius: 5px;
+    margin-top: 10px;
 }
