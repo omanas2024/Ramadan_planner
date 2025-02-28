@@ -1,35 +1,80 @@
 body {
-    font-family: 'Traditional Arabic', Arial, sans-serif;
-    text-align: center;
-    direction: rtl;
+    font-family: "Traditional Arabic", Arial, sans-serif;
     background: url('https://i.ibb.co/b5j9nSVD/image.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
+    text-align: center;
 }
 
 .container {
-    background: rgba(0, 0, 0, 0.7);
+    max-width: 90%;
+    margin: auto;
     padding: 20px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 900px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
 }
 
 h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #FFD700; /* ذهبي */
 }
 
-#ramadanCalendar {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-    width: 100%;
+h2 {
+    font-size: 28px;
+    color: #FFA500; /* برتقالي */
+}
+
+/* تصميم المسبحة */
+.tasbeeh-section {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
     text-align: center;
+}
+
+.counter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.counter-container button {
+    font-size: 24px;
+    padding: 10px 20px;
+    border: none;
+    background: #f5a623;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.counter-container span {
+    font-size: 30px;
+    font-weight: bold;
+    background: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    min-width: 60px;
+    text-align: center;
+}
+
+button {
+    font-size: 18px;
+    padding: 8px 12px;
+    border: none;
+    background: #28a745;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #218838;
 }
