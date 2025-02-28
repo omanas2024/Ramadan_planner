@@ -8,35 +8,37 @@ body {
 }
 
 .container {
-    max-width: 95%;
+    max-width: 90%;
     margin: auto;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     border-radius: 15px;
 }
 
+/* عنوان التقويم */
 h1 {
     font-size: 36px;
     font-weight: bold;
-    color: #FFD700; /* ذهبي */
+    color: #FFD700; /* لون ذهبي */
     margin-bottom: 20px;
 }
 
-/* تحسين تصميم التقويم */
+/* شبكة التقويم */
 .calendar {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
+    grid-template-columns: repeat(5, 1fr); /* 5 أعمدة */
+    gap: 10px;
     text-align: center;
     justify-content: center;
     margin-top: 20px;
     padding: 10px;
 }
 
+/* تنسيق كل يوم */
 .day {
     background: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    font-size: 20px;
+    color: white;
+    font-size: 22px;
     font-weight: bold;
     padding: 15px;
     border-radius: 10px;
@@ -44,18 +46,20 @@ h1 {
     cursor: pointer;
 }
 
+/* تغيير لون اليوم عند تمرير الماوس */
 .day:hover {
-    background: rgba(255, 223, 0, 0.8); /* لون ذهبي عند التحويم */
+    background: rgba(255, 223, 0, 0.8); /* لون ذهبي */
     color: black;
 }
 
-/* لون الخط الأزرق الداكن لأيام رمضان */
+/* لون الروابط */
 .day a {
     text-decoration: none;
-    color: #1E90FF; /* أزرق فاتح */
-    font-size: 22px;
+    color: #FFD700; /* لون ذهبي */
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .day a:hover {
-    color: #FFD700; /* ذهبي */
+    color: black;
 }
