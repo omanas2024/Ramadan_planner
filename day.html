@@ -12,25 +12,7 @@
     <div class="container">
         <h1 id="dayTitle">📅 يوم رمضان</h1>
 
-        <div class="task-section">
-            <h2>📋 قائمة المهام</h2>
-            <select id="taskSelect">
-                <option value="">اختر مهمة...</option>
-                <option value="🕌 الفجر">🕌 الفجر</option>
-                <option value="🕌 الظهر">🕌 الظهر</option>
-                <option value="🕌 العصر">🕌 العصر</option>
-                <option value="🕌 المغرب">🕌 المغرب</option>
-                <option value="🕌 العشاء">🕌 العشاء</option>
-                <option value="📖 قراءة القرآن">📖 قراءة القرآن</option>
-                <option value="💰 الصدقة">💰 الصدقة</option>
-                <option value="🤲 الدعاء">🤲 الدعاء</option>
-                <option value="✍️ مهمة أخرى">✍️ مهمة أخرى...</option>
-            </select>
-            <button onclick="addTask()">➕</button>
-        </div>
-
-        <ul id="taskList"></ul>
-
+        <!-- قسم المسبحة الإلكترونية -->
         <div class="tasbeeh-section">
             <h2>📿 المسبحة الإلكترونية</h2>
             <select id="tasbeehSelect">
@@ -42,6 +24,9 @@
                 <option value="أستغفر الله">أستغفر الله</option>
                 <option value="اللهم صل وسلم على نبينا محمد">اللهم صل وسلم على نبينا محمد</option>
             </select>
+            <button onclick="addNewTasbeeh()">➕ أضف ذكرًا جديدًا</button>
+            <input type="text" id="newTasbeeh" placeholder="اكتب الذكر هنا">
+
             <div class="counter-container">
                 <button onclick="decreaseCount()">➖</button>
                 <span id="tasbeehCount">0</span>
