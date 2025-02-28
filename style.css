@@ -4,77 +4,58 @@ body {
     background-size: cover;
     color: white;
     text-align: center;
+    direction: rtl;
 }
 
 .container {
-    max-width: 90%;
+    max-width: 95%;
     margin: auto;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
 }
 
 h1 {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: bold;
     color: #FFD700; /* ذهبي */
+    margin-bottom: 20px;
 }
 
-h2 {
-    font-size: 28px;
-    color: #FFA500; /* برتقالي */
+/* تحسين تصميم التقويم */
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px;
 }
 
-/* تصميم المسبحة */
-.tasbeeh-section {
+.day {
     background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
     padding: 15px;
     border-radius: 10px;
-    margin-top: 20px;
-    text-align: center;
-}
-
-.counter-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.counter-container button {
-    font-size: 24px;
-    padding: 10px 20px;
-    border: none;
-    background: #f5a623;
-    color: white;
-    border-radius: 5px;
+    transition: 0.3s;
     cursor: pointer;
-    margin: 5px;
 }
 
-.counter-container span {
-    font-size: 30px;
-    font-weight: bold;
-    background: white;
+.day:hover {
+    background: rgba(255, 223, 0, 0.8); /* لون ذهبي عند التحويم */
     color: black;
-    padding: 10px 20px;
-    border-radius: 5px;
-    display: inline-block;
-    min-width: 60px;
-    text-align: center;
 }
 
-button {
-    font-size: 18px;
-    padding: 8px 12px;
-    border: none;
-    background: #28a745;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
+/* لون الخط الأزرق الداكن لأيام رمضان */
+.day a {
+    text-decoration: none;
+    color: #1E90FF; /* أزرق فاتح */
+    font-size: 22px;
 }
 
-button:hover {
-    background: #218838;
+.day a:hover {
+    color: #FFD700; /* ذهبي */
 }
