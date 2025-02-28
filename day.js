@@ -1,43 +1,33 @@
-document.addEventListener("DOMContentLoaded", function () {
-    let params = new URLSearchParams(window.location.search);
-    let day = params.get("day") || "؟";
-    document.getElementById("dayTitle").innerText = `📅 يوم رمضان ${day}`;
+document.addEventListener("DOMContentLoaded", () => {
+    const addTaskBtn = document.getElementById("add-task");
+    const taskList = document.getElementById("task-list");
+    const dailyCompleted = document.getElementById("daily-completed");
+    const monthlyCompleted = document.getElementById("monthly-completed");
+
+    let completedTasks = 0;
+
+    // إضافة مهمة جديدة
+    addTaskBtn.addEventListener("click", () => {
+        const taskDiv = document.createElement("div");
+        taskDiv.classList.add("task");
+        taskDiv.innerHTML = `
+            <input type="time">
+            <span>📝 مهمة جديدة</span>
+            <input type="checkbox">
+        `;
+        taskList.appendChild(taskDiv);
+    });
+
+    // حساب عدد المهام المكتملة
+    taskList.addEventListener("change", (event) => {
+        if (event.target.type === "checkbox") {
+            if (event.target.checked) {
+                completedTasks++;
+            } else {
+                completedTasks--;
+            }
+            dailyCompleted.textContent = completedTasks;
+            monthlyCompleted.textContent = completedTasks; // يمكنك تحسين الحساب لليوم فقط
+        }
+    });
 });
-
-// إضافة ذكر جديد إلى قائمة الأذكار
-function addNewTasbeeh() {
-    let newTasbeehInput = document.getElementById("newTasbeeh");
-    let tasbeehSelect = document.getElementById("tasbeehSelect");
-
-    let newTasbeeh = newTasbeehInput.value.trim();
-    if (newTasbeeh) {
-        let option = document.createElement("option");
-        option.value = newTasbeeh;
-        option.textContent = newTasbeeh;
-        tasbeehSelect.appendChild(option);
-        tasbeehSelect.value = newTasbeeh;
-        newTasbeehInput.value = "";
-    }
-}
-
-// وظائف العدّاد (المسبحة)
-function increaseCount() {
-    let count = document.getElementById("tasbeehCount");
-    count.innerText = parseInt(count.innerText) + 1;
-}
-
-function decreaseCount() {
-    let count = document.getElementById("tasbeehCount");
-    if (parseInt(count.innerText) > 0) {
-        count.innerText = parseInt(count.innerText) - 1;
-    }
-}
-
-function resetCount() {
-    document.getElementById("tasbeehCount").innerText = "0";
-}
-
-// الرجوع إلى الصفحة الرئيسية
-function goBack() {
-    window.location.href = "index.html";
-}
