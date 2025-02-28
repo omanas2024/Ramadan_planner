@@ -5,86 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>يوم رمضان</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    <script src="day.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1> يوم رمضان <span id="day-number"></span></h1>
-        <a href="subhan-allah.html" class="misbaha-link">🕌 المسبحة الإلكترونية</a>
-    </header>
-    
-    <main>
-        <section class="tasks">
-            <h2>📋 مهام اليوم</h2>
-            <ul id="task-list">
-                <!-- سيتم إدراج المهام هنا تلقائيًا -->
-            </ul>
-            <button onclick="addCustomTask()">➕ إضافة مهمة</button>
-        </section>
-    
-        <section class="statistics">
-            <h2>📊 إحصائيات اليوم</h2>
-            <p>✅ عدد المهام المكتملة: <span id="completed-tasks">0</span></p>
-            <p>📅 إجمالي المهام المكتملة في الشهر: <span id="total-completed">0</span></p>
-        </section>
-    </main>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            loadTasks();
-            updateStatistics();
-        });
 
-        function loadTasks() {
-            const tasks = [
-                { name: "📖 قراءة القرآن", completed: false, time: "" },
-                { name: "🙏 صلاة التراويح", completed: false, time: "" },
-                { name: "🍽 تحضير وجبة الإفطار", completed: false, time: "" }
-            ];
-            
-            const taskList = document.getElementById("task-list");
-            taskList.innerHTML = "";
-            
-            tasks.forEach((task, index) => {
-                let taskItem = document.createElement("li");
-                taskItem.innerHTML = `
-                    <input type="checkbox" onchange="toggleTask(${index})" ${task.completed ? 'checked' : ''}>
-                    <span class="task-name">${task.name}</span>
-                    <input type="time" onchange="setTaskTime(${index}, this.value)" value="${task.time}">
-                `;
-                taskList.appendChild(taskItem);
-            });
-        }
+    <div class="container">
+        <header>
+            <h1>🌙 يوم رمضان</h1>
+            <a href="tasbeeh.html" class="tasbeeh-link">🔗 المسبحة الإلكترونية</a>
+        </header>
 
-        function toggleTask(index) {
-            const completedTasks = document.getElementById("completed-tasks");
-            let currentCount = parseInt(completedTasks.textContent);
-            completedTasks.textContent = document.querySelectorAll("input[type=checkbox]:checked").length;
-            updateStatistics();
-        }
+        <main>
+            <section class="tasks">
+                <h2>📋 مهام اليوم</h2>
+                <div id="task-list">
+                    <div class="task">
+                        <input type="time">
+                        <span>📖 قراءة القرآن</span>
+                        <input type="checkbox">
+                    </div>
+                    <div class="task">
+                        <input type="time">
+                        <span>🙏 صلاة التراويح</span>
+                        <input type="checkbox">
+                    </div>
+                    <div class="task">
+                        <input type="time">
+                        <span>🍽 تحضير وجبة الإفطار</span>
+                        <input type="checkbox">
+                    </div>
+                </div>
+                <button id="add-task">+ إضافة مهمة</button>
+            </section>
 
-        function setTaskTime(index, time) {
-            console.log(`تم تعيين وقت المهمة ${index}: ${time}`);
-        }
+            <section class="stats">
+                <h2>📊 إحصائيات اليوم</h2>
+                <p>✅ عدد المهام المكتملة: <span id="daily-completed">0</span></p>
+                <p>📅 إجمالي المهام المكتملة في الشهر: <span id="monthly-completed">0</span></p>
+            </section>
+        </main>
+    </div>
 
-        function addCustomTask() {
-            const taskList = document.getElementById("task-list");
-            let taskName = prompt("أدخل اسم المهمة الجديدة:");
-            if (taskName) {
-                let taskItem = document.createElement("li");
-                taskItem.innerHTML = `
-                    <input type="checkbox" onchange="toggleTask()">
-                    <span class="task-name">${taskName}</span>
-                    <input type="time" onchange="setTaskTime(this.value)">
-                `;
-                taskList.appendChild(taskItem);
-            }
-        }
-
-        function updateStatistics() {
-            const totalCompleted = document.getElementById("total-completed");
-            totalCompleted.textContent = document.querySelectorAll("input[type=checkbox]:checked").length;
-        }
-    </script>
 </body>
 </html>
